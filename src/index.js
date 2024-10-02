@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Cart from "./Pages/cart";
 import { CartProvider } from "./Components/CardContext";
+
 const router = createBrowserRouter([
   {
     path: "/",

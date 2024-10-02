@@ -7,7 +7,7 @@ const Card = ({ product }) => {
   return (
     <div className="w-5/6 rounded overflow-hidden shadow-lg border m-4">
       <div className="flex items-center bg-gray-100 p-2 border-b">
-        <button className="text-blue-600 mr-2 hover:bg-gray-200 p-1 rounded">
+        <button className="text-blue-600 mr-2 hover:bg-gray-200 p-1 rounded flex items-center">
           <svg
             viewBox="0 0 1024 1024"
             fill="currentColor"

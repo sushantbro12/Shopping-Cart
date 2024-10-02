@@ -1,38 +1,39 @@
 import React, { useContext } from "react";
-import { SearchXIcon, Settings2Icon, ShoppingBag } from "lucide-react";
+import { SearchXIcon, Settings, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CardContext";
 
 const Header = () => {
   const { cartItems } = useContext(CartContext);
   return (
-    <nav className="bg-purple-500 flex gap-10 justify-between p-3 text-white">
+    <nav className="bg-purple-700 flex gap-10 justify-between text-white">
       <div className="flex gap-10">
-        <h1 className="text-stone-300 text-xl hover:text-white">
+        <h1 className="text-stone-300 text-xl hover:text-white p-3">
           Shopping Cart
         </h1>
-        <div>
+        <Link to="/" className="p-3">
           <h2>Inventory</h2>
-        </div>
+        </Link>
 
-        <div className="flex">
+        <Link to="/cart" className="flex p-3">
           <ShoppingBag />
 
           <span className="ml-1">{cartItems.length}</span>
-        </div>
+        </Link>
       </div>
 
-      <div className="flex gap-10">
-        <div className="flex bg-purple-400 items-center p-1">
+      <div className="flex gap-10 p-2">
+        <div className="flex bg-purple-600 items-center p-2">
           <input
             type="search"
             className="bg-transparent border-none outline-none"></input>
 
           <SearchXIcon />
         </div>
-
-        <Settings2Icon />
-        <Link to="/cart">Login</Link>
+        <Settings className="mt-2" />
+        <Link to="/login" className="p-2">
+          Login
+        </Link>
       </div>
     </nav>
   );
