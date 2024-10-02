@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Card from "./Components/Card";
+import Header from "./Components/header";
+
+import useFetch from "./Components/useFetch";
 
 function App() {
+  const [products, loading, error] = useFetch();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="p-4">
+      {loading && <p>Loading.....</p>}
+      {error && <p>Error occurred while fetching</p>}
+      <Header />
+      <div className="flex flex-wrap">
+        {products.map((product) => {
+          return (
+            <div key={product.id} className="w-6/12">
+              <Card product={product} />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
