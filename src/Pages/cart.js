@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../Components/CardContext";
 import Header from "../Components/header";
 
@@ -8,12 +8,9 @@ const Cart = () => {
   return (
     <>
       <Header />
-      <h1 className="font-semibold text-right mr-5 text-xl underline cursor-pointer hidden sm:block">
-        Total
-      </h1>
       <div className="p-4">
         {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p className="bg-amber-100 p-5">No data yet.</p>
         ) : (
           <div className="space-y-4 ">
             {cartItems.map((item) => (

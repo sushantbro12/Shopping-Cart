@@ -36,7 +36,7 @@ const Card = ({ product }) => {
       </div>
 
       <div className="px-6 py-4 text-center">
-        <div className="font-bold text-xl mb-2 hover:text-blue-600 hover:underline cursor-pointer">
+        <div className="font-bold text-xl mb-2 text-blue-600 hover:underline cursor-pointer">
           {product.title}
         </div>
         <p className="text-gray-700 text-base">${product.price}</p>

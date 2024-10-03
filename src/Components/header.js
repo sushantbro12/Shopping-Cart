@@ -47,10 +47,10 @@ const Header = () => {
             type="search"
             className="bg-transparent border-none outline-none text-white placeholder:text-white w-full sm:w-auto"
           />
-          <SearchXIcon className="ml-2" />
+          <SearchXIcon className="ml-2  hover:bg-purple-900" />
         </div>
 
-        <Settings className="mt-2 sm:mt-0 cursor-pointer" />
+        <Settings className="mt-2 sm:mt-0 cursor-pointer  hover:bg-purple-900" />
 
         <Link to="/login" className="p-2 text-lg hover:underline">
           Login
@@ -71,7 +71,7 @@ const Header = () => {
           </Link>
           <Link
             to="/login"
-            className="p-2 hover:bg-purple-900 flex justify-center">
+            className="p-2 hover:bg-purple-900 flex justify-center hover:underline">
             Login
           </Link>
         </div>
