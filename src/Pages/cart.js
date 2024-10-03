@@ -3,7 +3,15 @@ import { CartContext } from "../Components/CardContext";
 import Header from "../Components/header";
 
 const Cart = () => {
-  const { cartItems, removeFromCart } = useContext(CartContext);
+  const { cartItems, removeFromCart, updateQuantity } = useContext(CartContext);
+
+  const calculateTotal = () => {
+    return cartItems
+      .reduce((total, item) => {
+        return total + item.price * item.quantity;
+      }, 0)
+      .toFixed(2);
+  };
 
   return (
     <>
@@ -34,10 +42,13 @@ const Cart = () => {
                     <label className="flex items-center">
                       <span className="mr-2">Qty:</span>
                       <input
+                        onChange={(e) =>
+                          updateQuantity(item.id, parseInt(e.target.value))
+                        }
                         className="border-2 w-16 text-center"
                         type="number"
                         min="1"
-                        defaultValue={1}
+                        Value={item.quantity}
                       />
                     </label>
                     <button
@@ -57,7 +68,7 @@ const Cart = () => {
         )}
         <div className="mt-6 text-right mr-2">
           <h1 className="font-semibold text-xl">
-            Total Items: {cartItems.length}
+            Total Price: ${calculateTotal()}
           </h1>
         </div>
       </div>
