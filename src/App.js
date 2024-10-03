@@ -12,10 +12,10 @@ function App() {
       {loading && <p>Loading.....</p>}
       {error && <p>Error occurred while fetching</p>}
       <Header />
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap justify-center">
         {products.map((product) => {
           return (
-            <div key={product.id} className="w-6/12">
+            <div key={product.id} className="w-full md:w-1/2 lg:w-1/2 p-2">
               <Card product={product} />
             </div>
           );
